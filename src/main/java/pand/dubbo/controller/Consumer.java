@@ -10,7 +10,7 @@ import pand.dubbo.service.DubboDemoService;
 
 public class Consumer {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"application.xml"});  
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"/spring/spring-consumer.xml"});  
         context.start();  
   
         DubboDemoService demoService = (DubboDemoService) context.getBean("demoService"); //  
