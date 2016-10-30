@@ -18,12 +18,11 @@
     http://www.springframework.org/schema/util  
     http://www.springframework.org/schema/util/spring-util.xsd"> 
     
-        <!-- HandlerMapping -->  
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>  
-    	<!-- HandlerAdapter -->  
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
-    <!-- 处理器 -->  
-	<bean name="/hello.back" class="demo001.HellowordController"/> 
+    <!-- 自动扫描装配组件(只扫描@Controller) 代替了　<context:annotation-config/>　-->
+	<context:component-scan base-package="pand.dubbo.*.controller">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+	</context:component-scan>
     
         <!-- ViewResolver -->  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  

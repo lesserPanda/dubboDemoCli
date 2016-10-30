@@ -6,24 +6,22 @@
   	<display-name>Archetype Created Web Application</display-name>
 	
 	<!-- 如果有其他配置文件，通用加载方法 -->
-	<!-- <context-param>
+	<context-param>
 	      <param-name>contextConfigLocation</param-name>
 	      <param-value>
-	          classpath:spring-common-config.xml,
-	          classpath:spring-budget-config.xml
+	          classpath:spring/spring-consumer.xml
 	      </param-value>
 	</context-param> 
 	<listener>  
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	-->
 	
 	<servlet>  
         <servlet-name>back</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
         <init-param>
         	<param-name>contextConfigLocation</param-name>
-        	<param-value>classpath*:conf/spring-back-application002.xml</param-value>
+        	<param-value>classpath*:conf/spring-back-application.xml</param-value>
         </init-param> 
         <load-on-startup>1</load-on-startup>  
     </servlet>  
